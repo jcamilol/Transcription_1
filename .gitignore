@@ -1,0 +1,11 @@
+*.log
+*.fls
+*.aux
+*.fdb_latexmk
+*.gz
+*.bbl
+*.blg
+*.toc
+*.snm
+*.out
+*.nav
