@@ -1,0 +1,67 @@
+\input{Diag1.tex}
+   Tomemos $\varepsilon > 0$ suficientemente pequeño, tal que en $(t_0 - \varepsilon, t_0 + \varepsilon)$ estén definidas todas las siguientes funciones:
+   \begin{align*}
+   \tilde{\sigma}(t) &= \alpha^{-1}(\sigma(t)) = (u(t), v(t)) \in U \quad \quad &&(U, \alpha) = \text{carta en } p \\
+   \tilde{f}(u,v) &= \beta^{-1}(f(\alpha(u,v))) = (\tau(u,v), S(u,v)) \in V \quad \quad &&(V, \beta) = \text{carta en } f(p)
+   \end{align*}
+   Entonces;
+   \begin{align*}
+      \tilde{\tau}(t) &= \beta^{-1}(\tau(t)) = \text{escritura local de } \tau(t) = f(\sigma(t))\\
+                                        &= \beta^{-1} f \sigma(t) = \beta^{-1} f (\alpha \tilde{\sigma})(t) \\
+                                        &= (\beta^{-1} f \alpha)(\tilde{\sigma}(t)) = \tilde{f} \tilde{\sigma}(t)
+   \end{align*}
+   \vspace{-0.5cm}
+   \begin{equation}
+   \boxedred{\tilde{\tau}(t) = \tilde{f}(\tilde{\sigma}(t)) = (\tau(u(t),v(t)), S(u(t),v(t)))}
+   \end{equation}
+   donde las funciones $\tau(u,v)$, $S(u,v)$, $u(t)$, $v(t)$ son todas diferenciables. En consecuencia; por la regla de la cadena:
+   \begin{equation}
+   \tilde{\tau}'(t_0) = \left[\tilde{f}_{*} (\tilde{\sigma}(t_0))\right] \cdot [\tilde{\sigma}'(t_0)] = 
+   \underbrace{
+   \begin{bmatrix}
+   \tau_u(u_0, v_0) & \tau_v(u_0, v_0) \\
+   S_u(u_0, v_0) & S_v(u_0, v_0)
+   \end{bmatrix}}_{\text{No depende de }\sigma}
+   \underset{\vec{v}}{\underset{\shortparallel}{\begin{pmatrix}
+   u'(t_0) \\
+   v'(t_0)
+   \end{pmatrix}}}   
+   \end{equation}
+   Notemos que la matriz jacobiana de la escritura local
+   \begin{equation}
+      A = \left[ \tilde{f} \right]_{*}{(\tilde{\sigma}(t_0))} = 
+   \begin{bmatrix}
+   \tau_u(u_0, v_0) & \tau_v(u_0, v_0) \\
+   S_u(u_0, v_0) & S_v(u_0, v_0)
+   \end{bmatrix}
+   \end{equation}
+   \underline{no depende} de la curva $\sigma(t)$, sino únicamente del punto $p \in S$ y la carta $(U, \alpha)$ en $p$. La función
+   \[
+   df_p : T_p(S) \longrightarrow T_{f(p)}(R)
+   \]
+   tiene el siguiente efecto: si $v = (c_1, c_2) = (c_1 \alpha_u + c_2 \alpha_v) \in T_p(S)$ satisface $v = \sigma'(t_0)$ para $\sigma(t) = \alpha(u(t), v(t))$, es decir
+   \[
+   v = \sigma'(t_0) = [\alpha_u, \alpha_v] 
+   \begin{pmatrix} u'(t_0) \\ v'(t_0) \end{pmatrix} 
+   = c_1 \alpha_u + c_2 \alpha_v
+   \]
+   Entonces $\tau(t) = \beta(\tau(t), S(t))$ satisface
+   \begin{align*}
+      \tau'(t) &= [\beta_\tau, \beta_S] \cdot \begin{pmatrix} \tau'(t_0) \\ S'(t_0) \end{pmatrix} \\
+               &= \begin{bmatrix} \tau_u & \tau_v \\ S_u & S_v \end{bmatrix}{(u_0,v_0)} \begin{pmatrix} u'(t_0) \\ v'(t_0) \end{pmatrix} \\
+               &= [\beta_\tau, \beta_S] \cdot A \cdot \begin{pmatrix} c_1 \\ c_2 \end{pmatrix}
+   \end{align*}
+   \underline{En resumen:} el diferencial se escribe localmente de este modo:
+   \begin{equation}
+   \begin{aligned}
+   df_p : T_p(S) &\longrightarrow T_{f(p)}(R) \\
+   v = c_1 \alpha_u + c_2 \alpha_v &\longmapsto w = (c_1 \tau_u + c_2 \tau_v)\beta_\tau + (c_1 S_u + c_2 S_v)\beta_S
+   \end{aligned}
+   \label{eq:dif1}
+   \end{equation}
+   Si $\mathcal{B}_p = \{\alpha_u, \alpha_v\}$, $\mathcal{B}_{f(p)} = \{\beta_\tau, \beta_S\}$ entonces
+   \begin{equation}
+   df_p(c_1, c_2) = A \begin{pmatrix} c_1 \\ c_2 \end{pmatrix} \quad \quad \quad df_p(\vec{v}) = A \vec{v}
+   \label{eq:dif2}
+   \end{equation}
+
