@@ -1,26 +1,21 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 
-
 \usepackage[a4paper, hmargin=3cm, top=3cm, bottom=3cm]{geometry}
 
-\usepackage{amsfonts} %para Z estilizada
-\usepackage{pifont} %para más estilos de viñetas
-\usepackage{amsmath} %necesario para equation*
-\usepackage{amsthm} %necesario para proof enviroment
-\usepackage{dsfont} %alguna letra caligráfica
-\usepackage{tipa} %Epsilon bonito
-\usepackage{graphicx} %para manejar imágenes
-\usepackage{wrapfig} %para imágenes en modo "wrap"
-\usepackage{lipsum} %para usar el texto de relleno
-\usepackage{tikz-cd} %para los diagramas conmutativos
+\usepackage{amsfonts} 
+\usepackage{amsmath} 
+\usepackage{amsthm} 
+\usepackage{dsfont} 
+\usepackage{tipa} 
+\usepackage{graphicx} 
+\usepackage{lipsum} 
+\usepackage{tikz-cd} 
 \usepackage{tikz}
 \usepackage{amssymb}
 \usepackage{tabularx}
-\graphicspath{ {./Images/} } %la dirección de la cual se sacan las imágenes
-%\usepackage{euler}
-\usepackage[normalem]{ulem} % Subrayado
-\usepackage{setspace} %Para interlineado
+\usepackage[normalem]{ulem} 
+\usepackage{setspace} 
 \usepackage{float}
 \usepackage{xcolor}
 \definecolor{nblue}{HTML}{1C3FBA}
@@ -30,7 +25,6 @@
             urlbordercolor=nblue]{hyperref}
 \usepackage{titlesec}
 
-% Redefinir \boxed para que use color rojo
 \newcommand{\boxedred}[1]{%
   \setlength\fboxsep{4pt}% Ajusta el espacio interno
   \textcolor{red}{%
@@ -67,8 +61,6 @@
 \titleformat{name=\subsubsection,numberless}
   {\normalfont\normalsize\bfseries\color{nblue}}
   {}{0em}{\underline}
-
-%\setlength{\parindent}{0pt}
 
 \counterwithin{equation}{subsection}
 \renewcommand{\theequation}{\roman{equation}}
