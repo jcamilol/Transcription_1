@@ -84,20 +84,16 @@
 \begin{document}
 
    \section{El operador diferencial en superficies}\label{sec:OpDif}
-   
    \subsection{Definición:}
-   Sea $S \xrightarrow{f} R$ una función diferenciable entre superficies.
-
+   Sea $S \xrightarrow{f} R$ una función diferenciable entre superficies.\\
    Para cada $p \in S$ el operador diferencial de $f$ en $p$ es la función $df_p$ que toma a cada vector $v = \sigma'(t_0)$ tangente de una curva $\sigma(t) \subseteq S$ que pasa por $p = \sigma(t_0)$, y lo manda en $w = \tau'(t_0)$ donde $\tau(t) = f(\sigma(t))$.
-
    \begin{align*}
    df_p : T_p(S) &\longrightarrow T_{f(p)}(R) \\
    v = \sigma'(t_0) &\longmapsto w = \tau'(t_0), \quad \tau(t) = f(\sigma(t))
    \end{align*}
-
    \subsection{Escritura local:}
+   \input{Diag1.tex}\\
    Tomemos $\varepsilon > 0$ suficientemente pequeño, tal que en $(t_0 - \varepsilon, t_0 + \varepsilon)$ estén definidas todas las siguientes funciones:
-
    \begin{align*}
    \tilde{\sigma}(t) &= \alpha^{-1}(\sigma(t)) = (u(t), v(t)) \in U \quad \quad &&(U, \alpha) = \text{carta en } p \\
    \tilde{f}(u,v) &= \beta^{-1}(f(\alpha(u,v))) = (\tau(u,v), S(u,v)) \in V \quad \quad &&(V, \beta) = \text{carta en } f(p)
@@ -114,7 +110,6 @@
    \end{equation}
 
    donde las funciones $\tau(u,v)$, $S(u,v)$, $u(t)$, $v(t)$ son todas diferenciables. En consecuencia; por la regla de la cadena:
-
    \begin{equation}
    \tilde{\tau}'(t_0) = \left[\tilde{f}_{*} (\tilde{\sigma}(t_0))\right] \cdot [\tilde{\sigma}'(t_0)] = 
    \underbrace{
@@ -127,7 +122,6 @@
    v'(t_0)
    \end{pmatrix}}}   
    \end{equation}
-   
    Notemos que la matriz jacobiana de la escritura local
    \begin{equation}
       A = \left[ \tilde{f} \right]_{*}{(\tilde{\sigma}(t_0))} = 
@@ -136,7 +130,6 @@
    S_u(u_0, v_0) & S_v(u_0, v_0)
    \end{bmatrix}
    \end{equation}
-
    \underline{no depende} de la curva $\sigma(t)$, sino únicamente del punto $p \in S$ y la carta $(U, \alpha)$ en $p$. La función
    \[
    df_p : T_p(S) \longrightarrow T_{f(p)}(R)
@@ -147,14 +140,12 @@
    \begin{pmatrix} u'(t_0) \\ v'(t_0) \end{pmatrix} 
    = c_1 \alpha_u + c_2 \alpha_v
    \]
-
    Entonces $\tau(t) = \beta(\tau(t), S(t))$ satisface
    \begin{align*}
       \tau'(t) &= [\beta_\tau, \beta_S] \cdot \begin{pmatrix} \tau'(t_0) \\ S'(t_0) \end{pmatrix} \\
                &= \begin{bmatrix} \tau_u & \tau_v \\ S_u & S_v \end{bmatrix}{(u_0,v_0)} \begin{pmatrix} u'(t_0) \\ v'(t_0) \end{pmatrix} \\
                &= [\beta_\tau, \beta_S] \cdot A \cdot \begin{pmatrix} c_1 \\ c_2 \end{pmatrix}
    \end{align*}
-
    \underline{En resumen:} el diferencial se escribe localmente de este modo:
    \begin{equation}
    \begin{aligned}
@@ -163,15 +154,12 @@
    \end{aligned}
    \label{eq:dif1}
    \end{equation}
-
    Si $\mathcal{B}_p = \{\alpha_u, \alpha_v\}$, $\mathcal{B}_{f(p)} = \{\beta_\tau, \beta_S\}$ entonces
    \begin{equation}
    df_p(c_1, c_2) = A \begin{pmatrix} c_1 \\ c_2 \end{pmatrix} \quad \quad \quad df_p(\vec{v}) = A \vec{v}
    \label{eq:dif2}
    \end{equation}
-
    \subsection{Propiedades del operador diferencial}
-
    \begin{itemize}
       \item[\textcolor{nblue}{\textbf{(a)}}] \textcolor{nblue}{\textbf{\underline{$df_p$ está bien definido:}}}
       Por las igualdades \eqref{eq:dif1} y \eqref{eq:dif2}, $df_p(v)$ solo depende de $p \in S$, la función $f$ y el vector $v \in T_p(S)$; \underline{no de la curva} $\sigma(t)$. En otras palabras, si $\eta(t)$ es otra curva tal que $\eta'(t_0) = v$ con $\eta(t_0) = p$, entonces:
@@ -179,7 +167,6 @@
       df_p(v) = \left. \frac{d}{dt} \Big( f(\eta(t)) \Big) \right|_{t=t_0} = \left. \frac{d}{dt} \Big( f(\sigma(t)) \Big) \right|_{t=t_0}
       \]
       da lo mismo.
-   
       \item[\textcolor{nblue}{\textbf{(b)}}] \textcolor{nblue}{\textbf{\underline{$df_p$ es lineal (en $T_p(S)$):}}}
       Por la escritura local, $df_p : T_p(S) \longrightarrow T_{f(p)}(R)$ satisface $df_p(v) = A \cdot v$, donde $A = \left[ \tilde{f}_* \right]{(q)}$ es la matriz jacobiana de cualquier escritura local $\tilde{f} = \beta^{-1} f \alpha$ de $f$ en $q = \alpha^{-1}(p)$. Entonces:
       \begin{align*}
@@ -187,10 +174,8 @@
                           &= c(A \cdot v) + A \cdot w \\
                           &= c \, df_p(v) + df_p(w)
       \end{align*}
-
       \item[\textcolor{nblue}{\textbf{(c)}}] \textcolor{nblue}{\textbf{\underline{$df_p$ no depende de las cartas y la escritura local:}}}
       Por la manera en la que es definido en \eqref{sec:OpDif}, no se emplea una carta local.
-
       \item[\textcolor{nblue}{\textbf{(d)}}] \textcolor{nblue}{\textbf{\underline{Composición:}}}
       Supongamos que $S \xrightarrow{\quad f \quad} R \xrightarrow{\quad g \quad} Q$ es una composición de dos funciones diferenciables entre superficies tal que $g(f(x))$ está definida en un entorno de $p \in S$. Si 
       $$
@@ -206,20 +191,14 @@
       \gamma(t) = g(\tau(t)) = g(f(\sigma(t))) = \text{curva en } g(f(p)) = g(f(\sigma(t_0))) \in Q
       $$
       $\theta = \gamma'(t_0) \in T_{g(f(p))}(Q)$ y, por definición, $\theta = \gamma'(t_0) = dg_{f(p)}(w) = dg_{f(p)}\big(df_p(v)\big)$
-   
       Pero, asimismo, también tenemos que, por definición $\theta = d(g \circ f)_p(v)$, en resumen:
-
       \[
       d(g \circ f)_p(v) = dg_{f(p)}\big(df_p(v)\big)
       \]
-
       Por la arbitrariedad de $v \in T_p(S)$ se deduce que
-
       \begin{equation*}
       \boxedred{d(g \circ f)_p \equiv dg_{f(p)} \circ df_p}
       \end{equation*}
    \end{itemize}
-
-   \input{Diag1.tex}
 
 \end{document}
